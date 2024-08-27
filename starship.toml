@@ -1,0 +1,41 @@
+format = """
+$directory\
+[](fg:#769ff0 bg:#394260)\
+$git_branch\
+$git_status\
+[](fg:#394260)\
+"""
+
+right_format = """
+[](fg:#292E42)\
+$character\
+[](fg:#1d2230 bg:#292E42)\
+$time
+"""
+
+add_newline = false
+
+[character]
+format = "$symbol"
+success_symbol = "[✔ ](fg:#c3e88d bg:#292E42)"
+error_symbol = "[✘ ](fg:#c53b53 bg:#292E42)"
+
+[directory]
+truncation_length = 6
+style = "fg:#1a1b26 bg:#769ff0"
+format = "[ $path ]($style)"
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
